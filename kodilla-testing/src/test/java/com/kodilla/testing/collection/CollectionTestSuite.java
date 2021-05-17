@@ -7,12 +7,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class CollectionTestSuite {
-    Integer[] checkedArray = new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    List<Integer> normalList = Arrays.asList(checkedArray);
-    List<Integer> emptyList = new LinkedList<>();
-    Integer[] evenArray = new Integer[]{2, 4, 6, 8, 10};
-    List<Integer> evenList = Arrays.asList(evenArray);
-
     @BeforeEach
     public void before(){
         System.out.println("Testing OddNumbersExterminator begins");
@@ -25,7 +19,8 @@ public class CollectionTestSuite {
             "then exterminator should return empty list")
     @Test
     void testOddNumbersExterminatorEmptyList(){
-       System.out.println("Testing empty list");
+        List<Integer> emptyList = new LinkedList<>();
+        System.out.println("Testing empty list");
         //Given
         OddNumbersExterminator exterminator = new OddNumbersExterminator();
         //When
@@ -38,6 +33,10 @@ public class CollectionTestSuite {
             "then exterminator should return list with even numbers")
     @Test
     void testOddNumbersExterminatorNormalList(){
+        Integer[] checkedArray = new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        List<Integer> normalList = Arrays.asList(checkedArray);
+        Integer[] evenArray = new Integer[]{2, 4, 6, 8, 10};
+        List<Integer> evenList = Arrays.asList(evenArray);
         System.out.println("Testing list :" + normalList);
         //Given
         OddNumbersExterminator exterminator = new OddNumbersExterminator();
