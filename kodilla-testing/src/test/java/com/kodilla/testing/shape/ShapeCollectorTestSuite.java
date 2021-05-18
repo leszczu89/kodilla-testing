@@ -49,7 +49,7 @@ public class ShapeCollectorTestSuite {
             Shape triangle1 = new Triangle(12);
             shapeCollector.addFigure(triangle1);
             //When
-            Shape result = shapeCollector.shapes.get(0);
+            Shape result = shapeCollector.getFigure(0);
             //Then
             Assertions.assertEquals(triangle1, result);
         }
@@ -65,8 +65,7 @@ public class ShapeCollectorTestSuite {
             shapeCollector.addFigure(circle1);
             //When
             String testResult = triangle1.getShapeName() + " " + square1.getShapeName() +" " + circle1.getShapeName() + " ";
-            String result = "";
-            for(Shape shape : shapeCollector.shapes){result+=shape.getShapeName(); result+=" ";}
+            String result = shapeCollector.showFigures();
             //Then
             Assertions.assertEquals(testResult, result);
         }
