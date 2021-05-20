@@ -34,7 +34,7 @@ public class ForumStatisticsTestSuite {
         when(statisticsMock.postsCount()).thenReturn(0);
         //When
         forumStatisticsTest.calculateAdvStatistics(statisticsMock);
-        int result = forumStatisticsTest.postsNumber;
+        int result = forumStatisticsTest.getPostsNumber();
         //Then
         Assertions.assertEquals(0,result);
     }
@@ -45,7 +45,7 @@ public class ForumStatisticsTestSuite {
         when(statisticsMock.postsCount()).thenReturn(1000);
         //When
         forumStatisticsTest.calculateAdvStatistics(statisticsMock);
-        int result = forumStatisticsTest.postsNumber;
+        int result = forumStatisticsTest.getPostsNumber();
         //Then
         Assertions.assertEquals(1000,result);
     }
@@ -56,7 +56,7 @@ public class ForumStatisticsTestSuite {
         when(statisticsMock.commentsCount()).thenReturn(0);
         //When
         forumStatisticsTest.calculateAdvStatistics(statisticsMock);
-        int result = forumStatisticsTest.commentsNumber;
+        int result = forumStatisticsTest.getCommentsNumber();
         //Then
         Assertions.assertEquals(0,result);
     }
@@ -68,7 +68,7 @@ public class ForumStatisticsTestSuite {
         when(statisticsMock.postsCount()).thenReturn(10);
         //When
         forumStatisticsTest.calculateAdvStatistics(statisticsMock);
-        double result = forumStatisticsTest.averageCommentsNumberPerPost;
+        double result = forumStatisticsTest.getAverageCommentsNumberPerPost();
         //Then
         Assertions.assertEquals(10,result);
     }
@@ -80,7 +80,7 @@ public class ForumStatisticsTestSuite {
         when(statisticsMock.postsCount()).thenReturn(100);
         //When
         forumStatisticsTest.calculateAdvStatistics(statisticsMock);
-        double result = forumStatisticsTest.averageCommentsNumberPerPost;
+        double result = forumStatisticsTest.getAverageCommentsNumberPerPost();
         //Then
         Assertions.assertEquals(0.1,result);
     }
@@ -92,7 +92,7 @@ public class ForumStatisticsTestSuite {
         when(statisticsMock.usersNames()).thenReturn(usersListMock);
         //When
         forumStatisticsTest.calculateAdvStatistics(statisticsMock);
-        int result = forumStatisticsTest.usersNumber;
+        int result = forumStatisticsTest.getUsersNumber();
         //Then
         Assertions.assertEquals(0,result);
     }
@@ -111,7 +111,7 @@ public class ForumStatisticsTestSuite {
         when(statisticsMock.usersNames()).thenReturn(usersListMock);
         //When
         forumStatisticsTest.calculateAdvStatistics(statisticsMock);
-        int result = forumStatisticsTest.usersNumber;
+        int result = forumStatisticsTest.getUsersNumber();
         //Then
         Assertions.assertEquals(100,result);
     }

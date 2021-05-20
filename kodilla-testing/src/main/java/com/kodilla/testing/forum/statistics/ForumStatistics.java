@@ -1,12 +1,36 @@
 package com.kodilla.testing.forum.statistics;
 
 public class ForumStatistics {
-    int usersNumber;
-    int postsNumber;
-    int commentsNumber;
-    double averagePostsNumberPerUser;
-    double averageCommentsNumberPerUser;
-    double averageCommentsNumberPerPost;
+    private int usersNumber;
+    private int postsNumber;
+    private int commentsNumber;
+    private double averagePostsNumberPerUser;
+    private double averageCommentsNumberPerUser;
+    private double averageCommentsNumberPerPost;
+
+    public int getUsersNumber() {
+        return usersNumber;
+    }
+
+    public int getPostsNumber() {
+        return postsNumber;
+    }
+
+    public int getCommentsNumber() {
+        return commentsNumber;
+    }
+
+    public double getAveragePostsNumberPerUser() {
+        return averagePostsNumberPerUser;
+    }
+
+    public double getAverageCommentsNumberPerUser() {
+        return averageCommentsNumberPerUser;
+    }
+
+    public double getAverageCommentsNumberPerPost() {
+        return averageCommentsNumberPerPost;
+    }
 
     public void calculateAdvStatistics(Statistics statistics) {
         usersNumber = statistics.usersNames().size();
@@ -27,11 +51,11 @@ public class ForumStatistics {
 
     }
     public void showStatistics() {
-        System.out.println("Number of users: "+ usersNumber+
-                "/nNumber of posts: "+ postsNumber+
-                "/nNumber of comments: " +commentsNumber+
-                "/nAverage posts number per user: "+ averagePostsNumberPerUser+
-                "/nAverage comments number per user: "+ averageCommentsNumberPerUser+
-                "/nAverage comments number per post: "+ averageCommentsNumberPerPost);
+        System.out.println("Number of users: "+ getUsersNumber()+
+                "/nNumber of posts: "+ getPostsNumber()+
+                "/nNumber of comments: " +getPostsNumber()+
+                "/nAverage posts number per user: "+ getAveragePostsNumberPerUser()+
+                "/nAverage comments number per user: "+ getAverageCommentsNumberPerUser()+
+                "/nAverage comments number per post: "+ getAverageCommentsNumberPerPost());
     }
 }
