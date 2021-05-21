@@ -10,14 +10,13 @@ public class StreamMain {
 
     public static void main(String[] args) {
         String string = "This is a beautiful day";
-        String string2 = "ABC";
+        String string2 = "Hello World";
         String string3 = "This strings length is: ";
         String string4 = "This fragment won't be shown, This string is a substring of a string.";
         PoemBeautifier poemBeautifier = new PoemBeautifier();
         System.out.println(poemBeautifier.beautify(string, String::toUpperCase));
-        System.out.println(poemBeautifier.beautify(string, stringTest -> string + " " + string2));
-        System.out.println(poemBeautifier.beautify(string3, stringTest -> string3 + string3.length()));
-        System.out.println(poemBeautifier.beautify(string4, stringTest -> string4.substring(30)));
+        System.out.println(poemBeautifier.beautify(string2, stringTest -> stringTest + " ABC"));
+        System.out.println(poemBeautifier.beautify(string3, stringTest -> stringTest + stringTest.length()));
+        System.out.println(poemBeautifier.beautify(string4, stringTest -> stringTest.substring(30)));
     }
-
 }
