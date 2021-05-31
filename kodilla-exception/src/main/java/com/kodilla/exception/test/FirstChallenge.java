@@ -22,7 +22,7 @@ public class FirstChallenge {
         } catch (ArithmeticException e) {
             System.out.println("You shouldn't divide by zero");
         } finally {
-            System.out.println("Try again");
+            System.out.println("The end of the program");
         }
 
     }
