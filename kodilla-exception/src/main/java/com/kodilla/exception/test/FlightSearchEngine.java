@@ -12,14 +12,9 @@ public class FlightSearchEngine {
         flightMap.put("Warszawa", true);
         flightMap.put("Kraków", false);
 
-        String message = "";
-        for (Map.Entry<String, Boolean> entry : flightMap.entrySet()){
-            if (entry.getKey().equals(flight.getArrivalAirport())){
-                message = "You can land on the airport: " + flight.getArrivalAirport() + " : " + entry.getValue();
-            }
-        }
-        if(!message.equals("")) {
-            System.out.println(message);
+        if (flightMap.containsKey(flight.getArrivalAirport())){
+            System.out.println("You can land on the airport: " + flight.getArrivalAirport() + " : "
+                    + flightMap.get(flight.getArrivalAirport()));
         } else {
             throw new RouteNotFoundException();
         }
