@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.DoubleStream;
 
 
 import static java.util.stream.Collectors.toList;
@@ -159,7 +160,7 @@ class BoardTestSuite {
                 .map(Task::getCreated)
                 .map(date -> (Period.between(date, LocalDate.now())).getDays())
                 .reduce(0, (sum, current) -> sum = sum + current);
-
+     //   double average = DoubleStream.of();
         double averageResult = (double)sumOfDates / (double) numberOfDates;
         double averageTest = 30.0/3.0;
         //Then
